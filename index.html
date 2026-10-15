@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar & Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>My Calendar</h1>
+        <p>Manage your days, events, and reminders.</p>
+    </header>
+
+    <main class="container">
+
+        <section class="clock-card">
+            <p class="section-label">CURRENT TIME</p>
+            <div id="clock">00:00:00</div>
+            <p id="today-date"></p>
+        </section>
+
+        <section class="calendar-card">
+            <div class="calendar-header">
+                <button id="prev-month" aria-label="Previous month">&lt;</button>
+                <h2 id="month-year"></h2>
+                <button id="next-month" aria-label="Next month">&gt;</button>
+            </div>
+
+            <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+
+            <div id="calendar-days" class="calendar-days"></div>
+
+            <p class="calendar-help">
+                Click a date to view reminders. Double-click to add one.
+            </p>
+        </section>
+
+        <section class="events-card">
+            <h2 id="events-heading">Events & Reminders</h2>
+            <div id="events-list">
+                <p>Select a date to view its events.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <dialog id="event-dialog">
+        <form id="event-form">
+            <h2>Add an Event</h2>
+
+            <label for="event-title">Event title</label>
+            <input type="text" id="event-title"
+                   placeholder="e.g. Web Development Assignment"
+                   required maxlength="100">
+
+            <label for="event-time">Time (optional)</label>
+            <input type="time" id="event-time">
+
+            <label for="event-description">Description (optional)</label>
+            <textarea id="event-description"
+                      placeholder="Add some details"></textarea>
+
+            <div class="form-buttons">
+                <button type="button" id="cancel-event">Cancel</button>
+                <button type="submit">Save Event</button>
+            </div>
+        </form>
+    </dialog>
+
+    <footer>
+        <p>My Calendar App | Web Development Individual Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
